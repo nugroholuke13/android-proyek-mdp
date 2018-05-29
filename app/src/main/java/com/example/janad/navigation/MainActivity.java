@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        Intent intent = new Intent(this, LoginActivity.class);
 //        startActivity(intent);
-
+//aa
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
