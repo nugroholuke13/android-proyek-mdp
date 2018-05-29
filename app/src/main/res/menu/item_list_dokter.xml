@@ -8,4 +8,36 @@
             android:icon="@drawable/ic_beranda"
             android:title="Home" />
     </group>
+    <item
+        android:id="@+id/navigationdoc"
+        android:title="Dokter" >
+        <menu >
+            <item
+                android:id="@+id/navigationjadwal"
+                android:checked="false"
+                android:icon="@drawable/ic_add"
+                android:title="Atur Jadwal" />
+            <item
+                android:id="@+id/navigationjadwal2"
+                android:checked="false"
+                android:icon="@drawable/ic_add"
+                android:title="Atur Jadwal Libur" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/nav3"
+        android:title="" >
+        <menu >
+            <item
+                android:id="@+id/navabout"
+                android:checked="false"
+                android:icon="@drawable/ic_about"
+                android:title="About" />
+            <item
+                android:id="@+id/navlogout"
+                android:checked="false"
+                android:icon="@drawable/ic_keluar"
+                android:title="Sign Out" />
+        </menu>
+    </item>
 </menu>

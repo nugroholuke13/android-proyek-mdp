@@ -22,28 +22,41 @@
         <activity
             android:name=".SignupActivity"
             android:theme="@style/AppTheme.Dark" />
-        <activity android:name=".HomeAdminActivity"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".AddDokterActivity"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".AddSpesialisActivity"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".VerifikasiDokterActivity"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".ListDokterActivity"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".dokterActivity"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".jadwalDokter"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".jadwalLiburDokter"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".pembatalan"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".jadwalOffline"
-            android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".jadwalLive"
-            android:theme="@style/AppTheme.Dark"></activity>
+        <activity
+            android:name=".HomeAdminActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".AddDokterActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".AddSpesialisActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".VerifikasiDokterActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".ListDokterActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".dokterActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".jadwalDokter"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".jadwalLiburDokter"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".pembatalan"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".jadwalOffline"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".jadwalLive"
+            android:theme="@style/AppTheme.Dark" />
+        <activity android:name=".lihatJadwalDokter" />
+        <activity android:name=".lihatJadwalLibur"></activity>
     </application>
 
 </manifest>

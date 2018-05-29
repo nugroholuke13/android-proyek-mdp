@@ -35,9 +35,25 @@ public class ListDokterActivity extends AppCompatActivity {
                 else menuItem.setChecked(true);
                 drawerLayout.closeDrawers();
                 switch (menuItem.getItemId()){
-                    case R.id.navigation1:
-                        Intent intent1 = new Intent(ListDokterActivity.this, MainActivity.class);
+                    case R.id.navigationhome:
+                        Intent intent1 = new Intent(ListDokterActivity.this, ListDokterActivity.class);
                         startActivity(intent1);
+                        return true;
+                    case R.id.navigationjadwal:
+                        Intent intent2 = new Intent(ListDokterActivity.this,lihatJadwalDokter.class);
+                        startActivity(intent2);
+                        return true;
+                    case R.id.navigationjadwal2 :
+                         Intent intent3 = new Intent(ListDokterActivity.this,jadwalLiburDokter.class);
+                         startActivity(intent3);
+                         return true;
+                    case R.id.navabout:
+                         Intent intent4 = new Intent(ListDokterActivity.this,ListDokterActivity.class);
+                         startActivity(intent4);
+                         return true;
+                    case R.id.navlogout:
+                        Intent intent5 = new Intent(ListDokterActivity.this,LoginActivity.class);
+                        startActivity(intent5);
                         return true;
                     default:
                         Toast.makeText(getApplicationContext(),"Kesalahan Terjadi ",Toast.LENGTH_SHORT).show();

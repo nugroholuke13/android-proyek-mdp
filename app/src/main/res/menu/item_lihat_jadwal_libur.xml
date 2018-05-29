@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navhome3"
+        android:checked="false"
+        android:title="Home" />
+    <item
+        android:id="@+id/navdok3"
+        android:title="Dokter" >
+        <menu >
+            <item
+                android:id="@+id/navaturjadwal3"
+                android:checked="false"
+                android:title="Jadwal Dokter" />
+            <item
+                android:id="@+id/navjadwalLibur3"
+                android:checked="false"
+                android:title="Atur Jadwal Libur" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/navkosong2"
+        android:title="" >
+        <menu >
+            <item
+                android:id="@+id/navabout3"
+                android:checked="false"
+                android:title="About" />
+            <item
+                android:id="@+id/navsignout3"
+                android:checked="false"
+                android:title="Sign Out" />
+        </menu>
+    </item>
+</menu>
