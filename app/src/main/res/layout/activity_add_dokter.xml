@@ -1,145 +1,161 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".AddDokterActivity">
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fitsSystemWindows="true">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="56dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp">
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:gravity="center"
-            android:text="Halaman Tambah Dokter"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30dp" />
-
-        <!-- Name Label -->
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_name"
+            android:paddingTop="56dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="Halaman Tambah Dokter"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30dp" />
+
+            <!-- Name Label -->
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:hint="Name" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <EditText android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Name" />
+            </android.support.design.widget.TextInputLayout>
 
-        <!-- Username Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-
-            <EditText
-                android:id="@+id/input_username"
+            <!-- Username Label -->
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"
-                android:inputType="textPostalAddress" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/input_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    android:inputType="textPostalAddress" />
+            </android.support.design.widget.TextInputLayout>
 
 
 
-        <!--  Alamat Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_alamat"
+            <!--  Alamat Label -->
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:hint="Address" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <EditText android:id="@+id/input_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Address" />
+            </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_kota"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textAutoComplete"
-                android:hint="Kota" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <EditText android:id="@+id/input_kota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete"
+                    android:hint="Kota" />
+            </android.support.design.widget.TextInputLayout>
 
 
-        <!-- mobile number -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_mobile"
+            <!-- mobile number -->
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="Primary Mobile Number" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <EditText android:id="@+id/input_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Primary Mobile Number" />
+            </android.support.design.widget.TextInputLayout>
 
-        <!-- mobile number2 -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_mobile2"
+            <!-- mobile number2 -->
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="Second Mobile Number" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <EditText android:id="@+id/input_mobile2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Second Mobile Number" />
+            </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_spesialis"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textAutoComplete"
-                android:hint="Spesialisasi" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <EditText android:id="@+id/input_spesialis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete"
+                    android:hint="Spesialisasi" />
+            </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_nomer_siup"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:hint="Nomor Surat Ijin Untuk Praktek" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <EditText android:id="@+id/input_nomer_siup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Nomor Surat Ijin Untuk Praktek" />
+            </android.support.design.widget.TextInputLayout>
 
-        <!-- Signup Button -->
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_signup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:padding="12dp"
-            android:text="Create Doctor Account"
-            android:textStyle="bold"/>
+            <!-- Signup Button -->
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_signup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp"
+                android:text="Create Doctor Account"
+                android:textStyle="bold"/>
 
 
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/layout_header"
+        app:menu="@menu/item_navigasi" />
+</android.support.v4.widget.DrawerLayout>
