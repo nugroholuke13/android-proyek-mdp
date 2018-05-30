@@ -30,6 +30,10 @@
                 android:text="Halaman Search Dokter"
                 android:textColor="@color/colorPrimary"
                 android:textSize="30dp" />
+            
+            <android.support.v7.widget.AppCompatRadioButton
+                android:layout_width=""
+                android:layout_height="" />
 
             <!-- Name Label -->
             <android.support.design.widget.TextInputLayout
@@ -45,10 +49,21 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spin_kota"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp">
+                android:layout_marginRight="0dp"
+                android:spinnerMode="dropdown">
+            </android.support.v7.widget.AppCompatSpinner>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spin_spesialis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="0dp"
+                android:spinnerMode="dropdown">
             </android.support.v7.widget.AppCompatSpinner>
 
 
