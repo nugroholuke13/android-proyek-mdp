@@ -50,7 +50,14 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                login();
+                if(_emailText.getText().toString().equals("") && _passwordText.getText().toString().equals("")){
+                    //Toast.makeText(MainActivity.this,"Username dan Password tidak boleh kosong !",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Username dan Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    LoginTask logintask = new LoginTask();
+                    logintask.execute(_emailText.getText().toString(), _passwordText.getText().toString());
+                }
             }
         });
 
@@ -67,111 +74,12 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void login() {
-        Log.d(TAG, "Login");
-        String jenis = "";
-
-        if (!validate()) {
-            onLoginFailed();
-            return;
-        }
-
-        if(_emailText.getText().toString().equals("") && _passwordText.getText().toString().equals("")){
-            //Toast.makeText(MainActivity.this,"Username dan Password tidak boleh kosong !",Toast.LENGTH_SHORT).show();
-            if (jenis == "admin"){
-                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent);
-            }
-
-        }
-        else{
-            LoginTask logintask = new LoginTask();
-            logintask.execute(_emailText.getText().toString(), _passwordText.getText().toString());
-        }
-
-
-        _loginButton.setEnabled(false);
-
-        final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
-                R.style.AppTheme_Dark_Dialog);
-        progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Authenticating...");
-        progressDialog.show();
-
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
-
-        // TODO: Implement your own authentication logic here.
-
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
-                        onLoginFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_SIGNUP) {
-            if (resultCode == RESULT_OK) {
-
-                // TODO: Implement successful signup logic here
-                // By default we just finish the Activity and log them in automatically
-                //this.finish();
-            }
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        // Disable going back to the MainActivity
-        moveTaskToBack(true);
-    }
-
-    public void onLoginSuccess() {
-        _loginButton.setEnabled(true);
-        //finish();
-        Intent nextIntent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(nextIntent);
-    }
-
-    public void onLoginFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-        _loginButton.setEnabled(true);
-    }
-
-    public boolean validate() {
-        boolean valid = true;
-
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
-
-        if (email.isEmpty()) {
-            valid = false;
-        } else {
-            _emailText.setError(null);
-        }
-
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 characters");
-            valid = false;
-        } else {
-            _passwordText.setError(null);
-        }
-
-        return valid;
-    }
     private class LoginTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... strings){
             String response = "";
             try {
-                URL url = new URL("http:// 192.168.1.22:8012/webservice/login.php");//ip
+                URL url = new URL("http://192.168.43.9:8012/webservice/login.php");//ip
                 HttpURLConnection conn = (HttpURLConnection)url.openConnection();
                 conn.setRequestMethod("POST");
                 String parameter = "username=" + strings[0] + "&password=" + strings[1];
@@ -190,6 +98,8 @@ public class LoginActivity extends AppCompatActivity {
                         response += line;
                     }
                     reader.close();
+                    Intent pindah = new Intent(LoginActivity.this,MainActivity.class);
+                    startActivity(pindah);
                 }else{
                     response = "Gagal";
                 }
@@ -211,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(String s){
             super.onPostExecute(s);
             stat.setText(s);
-          //  Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
         }
     }
 }

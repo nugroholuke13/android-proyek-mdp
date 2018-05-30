@@ -31,9 +31,7 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="30dp" />
             
-            <android.support.v7.widget.AppCompatRadioButton
-                android:layout_width=""
-                android:layout_height="" />
+
 
             <!-- Name Label -->
             <android.support.design.widget.TextInputLayout
