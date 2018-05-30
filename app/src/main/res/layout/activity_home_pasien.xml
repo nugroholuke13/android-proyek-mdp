@@ -76,7 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:hint="Name" />
+                    android:hint="Nama Dokter" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.v7.widget.AppCompatSpinner
