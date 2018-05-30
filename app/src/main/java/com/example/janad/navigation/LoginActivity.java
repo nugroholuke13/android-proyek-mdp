@@ -2,6 +2,7 @@ package com.example.janad.navigation;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,6 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
     Button _loginButton;
     @BindView(R.id.link_signup)
     TextView _signupLink;
+    @BindView(R.id.stat)
+    TextView stat;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,11 +69,24 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login() {
         Log.d(TAG, "Login");
-
+        String jenis = "";
 
         if (!validate()) {
             onLoginFailed();
             return;
+        }
+
+        if(_emailText.getText().toString().equals("") && _passwordText.getText().toString().equals("")){
+            //Toast.makeText(MainActivity.this,"Username dan Password tidak boleh kosong !",Toast.LENGTH_SHORT).show();
+            if (jenis == "admin"){
+                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+
+        }
+        else{
+            LoginTask logintask = new LoginTask();
+            logintask.execute(_emailText.getText().toString(), _passwordText.getText().toString());
         }
 
 
@@ -116,7 +142,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLoginFailed() {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-
         _loginButton.setEnabled(true);
     }
 
@@ -126,8 +151,7 @@ public class LoginActivity extends AppCompatActivity {
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
+        if (email.isEmpty()) {
             valid = false;
         } else {
             _emailText.setError(null);
@@ -141,5 +165,53 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         return valid;
+    }
+    private class LoginTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... strings){
+            String response = "";
+            try {
+                URL url = new URL("http:// 192.168.1.22:8012/webservice/login.php");//ip
+                HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+                conn.setRequestMethod("POST");
+                String parameter = "username=" + strings[0] + "&password=" + strings[1];
+                OutputStream outputStream = conn.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+                writer.write(parameter);
+                writer.flush();
+                writer.close();
+                outputStream.close();
+
+                int responseCode = conn.getResponseCode();
+                if(responseCode == HttpURLConnection.HTTP_OK){
+                    String line = "";
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                    while ((line = reader.readLine())!=null){
+                        response += line;
+                    }
+                    reader.close();
+                }else{
+                    response = "Gagal";
+                }
+            }catch (MalformedURLException e){
+                e.printStackTrace();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+            return response;
+        }
+
+        @Override
+        protected  void onPreExecute(){
+            super.onPreExecute();
+            stat.setText("Loading...");
+        }
+
+        @Override
+        protected void onPostExecute(String s){
+            super.onPostExecute(s);
+            stat.setText(s);
+          //  Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+        }
     }
 }
