@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="16dp"
-            android:text="Okedroid.com"
+            android:text="Admin"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
-            android:text="Blog Android and Teknologi"
+            android:text="Book My Doc"
             android:textColor="#fff" />
     </LinearLayout>
 </RelativeLayout>
