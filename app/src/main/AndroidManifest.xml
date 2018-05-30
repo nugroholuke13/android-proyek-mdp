@@ -56,7 +56,8 @@
             android:name=".jadwalLive"
             android:theme="@style/AppTheme.Dark" />
         <activity android:name=".lihatJadwalDokter" />
-        <activity android:name=".lihatJadwalLibur"></activity>
+        <activity android:name=".lihatJadwalLibur" />
+        <activity android:name=".HomePasienActivity"></activity>
     </application>
 
 </manifest>
