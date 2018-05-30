@@ -30,8 +30,41 @@
                 android:text="Halaman Search Dokter"
                 android:textColor="@color/colorPrimary"
                 android:textSize="30dp" />
-            
 
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbgroup"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rb1"
+                    android:text="Nama"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rb2"
+                    android:text="Spesialis"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rb3"
+                    android:text="Kota"/>
+            </RadioGroup>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginTop="24dp"
+                android:padding="12dp"
+                android:text="Terapkan"
+                android:textStyle="bold" />
 
             <!-- Name Label -->
             <android.support.design.widget.TextInputLayout
@@ -63,7 +96,6 @@
                 android:layout_marginRight="0dp"
                 android:spinnerMode="dropdown">
             </android.support.v7.widget.AppCompatSpinner>
-
 
         </LinearLayout>
     </ScrollView>
