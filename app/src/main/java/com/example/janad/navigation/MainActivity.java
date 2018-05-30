@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       Intent intent = new Intent(this, ListDokterActivity.class);
-      startActivity(intent);
+      // Intent intent = new Intent(this, ListDokterActivity.class);
+      //startActivity(intent);
 //aa
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
