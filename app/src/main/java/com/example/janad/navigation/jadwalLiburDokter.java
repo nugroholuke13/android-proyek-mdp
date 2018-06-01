@@ -11,13 +11,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class jadwalLiburDokter extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-    Button btnBack;
+    Button btnSubmitLibur;
+    TextView txtLibur;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +79,17 @@ public class jadwalLiburDokter extends AppCompatActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         //memanggil synstate
         actionBarDrawerToggle.syncState();
+
+        btnSubmitLibur = findViewById(R.id.btnSubmitLibur);
+        txtLibur = findViewById(R.id.txtHariLibur);
+
+        btnSubmitLibur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+
     }
 
     @Override

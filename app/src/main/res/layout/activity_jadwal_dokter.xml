@@ -67,7 +67,7 @@
             app:layout_constraintTop_toBottomOf="@+id/jadwalHari" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/txtJam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -89,7 +89,7 @@
             android:layout_marginTop="42dp"
             android:text="Submit"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/txtJam" />
 
     </LinearLayout>
 

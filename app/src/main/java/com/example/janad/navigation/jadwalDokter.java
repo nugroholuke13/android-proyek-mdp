@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class jadwalDokter extends AppCompatActivity {
@@ -18,7 +19,8 @@ public class jadwalDokter extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-    Button btnBack;
+    Button btnSubmit;
+    TextView txtjadwal,txtjam;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +79,17 @@ public class jadwalDokter extends AppCompatActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         //memanggil synstate
         actionBarDrawerToggle.syncState();
+
+        btnSubmit = findViewById(R.id.buttonJadwal);
+        txtjadwal = findViewById(R.id.jadwalHari);
+        txtjam = findViewById(R.id.txtJam);
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override

@@ -48,14 +48,14 @@
 
             <!-- Signup Button -->
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_signup"
+                android:id="@+id/btn_spesial"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
+                android:layout_marginTop="24dp"
                 android:padding="12dp"
                 android:text="Create New Spesialisasi"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
         </LinearLayout>

@@ -9,13 +9,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 public class AddDokterActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-
+    Button btnsub;
+    TextView txtNama,txtUsername,txtAlamat,txtKota,txttelp1,txttelp2,txtspesial,txtnoijin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,6 +104,24 @@ public class AddDokterActivity extends AppCompatActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         //memanggil synstate
         actionBarDrawerToggle.syncState();
+
+        btnsub = findViewById(R.id.btn_add_dokter);
+        txtNama = findViewById(R.id.input_name);
+        txtUsername = findViewById(R.id.input_username);
+        txtAlamat = findViewById(R.id.input_alamat);
+        txtKota = findViewById(R.id.input_kota);
+        txttelp1 = findViewById(R.id.input_mobile);
+        txttelp2 = findViewById(R.id.input_mobile2);
+        txtspesial = findViewById(R.id.input_spesialis);
+        txtnoijin = findViewById(R.id.input_nomer_siup);
+
+        btnsub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
     @Override
