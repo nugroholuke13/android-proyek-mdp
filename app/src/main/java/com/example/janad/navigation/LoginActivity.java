@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
         protected String doInBackground(String... strings){
             String response = "";
             try {
-                URL url = new URL("http://192.168.43.9:8012/webservice/login.php");//ip
+                URL url = new URL("http://mdpjjlg.000webhostapp.com/login.php");//ip
                 HttpURLConnection conn = (HttpURLConnection)url.openConnection();
                 conn.setRequestMethod("POST");
                 String parameter = "username=" + strings[0] + "&password=" + strings[1];
