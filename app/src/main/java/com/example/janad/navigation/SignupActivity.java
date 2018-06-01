@@ -103,7 +103,7 @@ public class SignupActivity extends AppCompatActivity {
 
     public void registerProcess(){
         //String url = "http://10.10.75.249:8012/serviceapp/register.php";
-        String url = "http://192.168.1.22:8012/webservice/register_json.php";
+        String url = "http://192.168.43.9:8012/webservice/register_json.php";
         txtResult.setText("Loading . . .");
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -155,7 +155,7 @@ public class SignupActivity extends AppCompatActivity {
             //genmotion ; 10..0.3.3
 
             try {
-                URL url = new URL("http://192.168.1.22:8012/webservice/register.php");
+                URL url = new URL("http://192.168.43.9:8012/webservice/register.php");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
                 String parameter = "username=" + strings[0] + "&password=" + strings[1]+ "&nama="+ strings[2]+"&email=" + strings[3]+ "&telp=" + strings[4];

@@ -39,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView _signupLink;
     @BindView(R.id.stat)
     TextView stat;
+    String jenis = "";
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,10 @@ public class LoginActivity extends AppCompatActivity {
                 if(_emailText.getText().toString().equals("") && _passwordText.getText().toString().equals("")){
                     //Toast.makeText(MainActivity.this,"Username dan Password tidak boleh kosong !",Toast.LENGTH_SHORT).show();
                     Toast.makeText(LoginActivity.this, "Username dan Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
+                }
+                else if(_emailText.getText().toString().equals("admin") && _passwordText.getText().toString().equals("admin")) {
+                    Intent pindah = new Intent(LoginActivity.this,VerifikasiDokterActivity.class);
+                    startActivity(pindah);
                 }
                 else{
                     LoginTask logintask = new LoginTask();
@@ -93,13 +98,20 @@ public class LoginActivity extends AppCompatActivity {
                 int responseCode = conn.getResponseCode();
                 if(responseCode == HttpURLConnection.HTTP_OK){
                     String line = "";
+
                     BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                     while ((line = reader.readLine())!=null){
                         response += line;
                     }
                     reader.close();
-                    Intent pindah = new Intent(LoginActivity.this,MainActivity.class);
-                    startActivity(pindah);
+                    if (jenis.equals("dokter")) {
+                        Intent pindah = new Intent(LoginActivity.this,MainActivity.class);
+                        startActivity(pindah);
+                    } else if (jenis.equals("pasien")) {
+                        Intent pindah = new Intent(LoginActivity.this,HomePasienActivity.class);
+                        startActivity(pindah);
+                    }
+
                 }else{
                     response = "Gagal";
                 }
