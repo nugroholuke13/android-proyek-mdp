@@ -19,7 +19,7 @@ public class pembatalan extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(pembatalan.this,dokterActivity.class);
+                Intent intent = new Intent(pembatalan.this,HomeDokterActivity.class);
                 startActivity(intent);
             }
         });

@@ -10,10 +10,10 @@
 
     <item
         android:id="@+id/navigasi_kategori_1"
-        android:title="@string/navigasi_kategori_admin_1">
+        android:title="@string/navigasi_kategori_pasien_1">
         <menu>
             <item
-                android:id="@+id/navigation4"
+                android:id="@+id/navigation2"
                 android:checked="false"
                 android:icon="@drawable/ic_view"
                 android:title="@string/navigation_view_item_pasien_2" />
@@ -24,23 +24,23 @@
 
     <item
         android:id="@+id/navigasi_kategori_3"
-        android:title="@string/navigasi_kategori_admin_3">
+        android:title="@string/navigasi_kategori_pasien_2">
         <menu>
             <item
-                android:id="@+id/navigation7"
+                android:id="@+id/navigation3"
                 android:checked="false"
                 android:icon="@drawable/ic_profil"
-                android:title="@string/navigation_view_item_admin_7" />
+                android:title="@string/navigation_view_item_pasien_3" />
             <item
-                android:id="@+id/navigation8"
+                android:id="@+id/navigation4"
                 android:checked="false"
                 android:icon="@drawable/ic_about"
-                android:title="@string/navigation_view_item_admin_8" />
+                android:title="@string/navigation_view_item_pasien_4" />
             <item
-                android:id="@+id/navigation9"
+                android:id="@+id/navigation5"
                 android:checked="false"
                 android:icon="@drawable/ic_keluar"
-                android:title="@string/navigation_view_item_admin_9" />
+                android:title="@string/navigation_view_item_pasien_5" />
 
         </menu>
     </item>

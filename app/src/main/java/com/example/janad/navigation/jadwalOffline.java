@@ -18,7 +18,7 @@ public class jadwalOffline extends AppCompatActivity {
         btnDokter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(jadwalOffline.this,dokterActivity.class);
+                Intent intent = new Intent(jadwalOffline.this,HomeDokterActivity.class);
                         startActivity(intent);
             }
         });

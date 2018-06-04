@@ -20,10 +20,23 @@
     <string name="navigation_view_item_pasien_1">Home</string>
     <string name="navigasi_kategori_pasien_1">Dokter</string>
     <string name="navigation_view_item_pasien_2">Lihat Daftar Dokter</string>
-    <string name="navigasi_kategori_pasien_3"></string>
-    <string name="navigation_view_item_pasien_7">Profile</string>
-    <string name="navigation_view_item_pasien_8">About</string>
-    <string name="navigation_view_item_pasien_9">Sign Out</string>
+    <string name="navigasi_kategori_pasien_2"></string>
+    <string name="navigation_view_item_pasien_3">Profile</string>
+    <string name="navigation_view_item_pasien_4">About</string>
+    <string name="navigation_view_item_pasien_5">Sign Out</string>
+
+    <string name="navigation_view_item_dokter_1">Home</string>
+    <string name="navigasi_kategori_dokter_1">Jadwal Praktek</string>
+    <string name="navigation_view_item_dokter_2">Atur Jadwal Praktek</string>
+    <string name="navigation_view_item_dokter_7">Input Jadwal Libur</string>
+    <string name="navigation_view_item_dokter_9">Pembatalan Jadwal</string>
+    <string name="navigasi_kategori_dokter_2">Antrian</string>
+    <string name="navigation_view_item_dokter_3">Live Antrian</string>
+    <string name="navigation_view_item_dokter_8">Input Antrian Offline</string>
+    <string name="navigasi_kategori_dokter_3"></string>
+    <string name="navigation_view_item_dokter_4">Profile</string>
+    <string name="navigation_view_item_dokter_5">About</string>
+    <string name="navigation_view_item_dokter_6">Sign Out</string>
 
     <string name="nomerip">http://192.168.1.36/projectmdp</string>
 </resources>

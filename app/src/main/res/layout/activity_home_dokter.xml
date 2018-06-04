@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".HomeDokterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,14 +14,11 @@
         android:measureWithLargestChild="false"
         android:orientation="vertical">
 
-        <!--<include-->
-            <!--android:id="@+id/toolbar"-->
-            <!--layout="@layout/layout_toolbar" />-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Ini adalah Halaman Awal Admin"
+            android:text="Ini adalah Halaman Awal Dokter"
             android:id="@+id/textView" android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
@@ -31,5 +28,5 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/layout_header"
-        app:menu="@menu/item_navigasi" />
+        app:menu="@menu/item_navigasi_dokter" />
 </android.support.v4.widget.DrawerLayout>

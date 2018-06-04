@@ -18,12 +18,9 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".SignupActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
-            android:name=".HomeAdminActivity"
+            android:name=".SignupActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".AddDokterActivity"
@@ -38,7 +35,7 @@
             android:name=".ListDokterActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
-            android:name=".dokterActivity"
+            android:name=".HomeDokterActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".jadwalDokter"
@@ -55,9 +52,15 @@
         <activity
             android:name=".jadwalLive"
             android:theme="@style/AppTheme.Dark" />
-        <activity android:name=".lihatJadwalDokter" />
-        <activity android:name=".lihatJadwalLibur" />
-        <activity android:name=".HomePasienActivity"></activity>
+        <activity
+            android:name=".lihatJadwalDokter"
+            android:theme="@style/AppTheme.Dark"/>
+        <activity
+            android:name=".lihatJadwalLibur"
+            android:theme="@style/AppTheme.Dark"/>
+        <activity
+            android:name=".HomePasienActivity"
+            android:theme="@style/AppTheme.Dark"/>
     </application>
 
 </manifest>

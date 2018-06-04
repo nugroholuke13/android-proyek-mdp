@@ -18,7 +18,7 @@ public class jadwalLive extends AppCompatActivity {
         btnDokter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(jadwalLive.this,dokterActivity.class);
+                Intent intent = new Intent(jadwalLive.this,HomeDokterActivity.class);
                 startActivity(intent);
             }
         });

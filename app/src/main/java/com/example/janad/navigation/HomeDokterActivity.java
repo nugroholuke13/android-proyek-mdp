@@ -6,13 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class dokterActivity extends AppCompatActivity {
+public class HomeDokterActivity extends AppCompatActivity {
 
     Button btnJadwal,btnLibur,btnBatal,btnOffline,btnLive;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dokter);
+        setContentView(R.layout.activity_home_dokter);
         btnJadwal = findViewById(R.id.button1);
         btnLibur = findViewById(R.id.button2);
         btnBatal = findViewById(R.id.button3);
@@ -23,7 +23,7 @@ public class dokterActivity extends AppCompatActivity {
         btnJadwal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent jdwlDokter = new Intent(dokterActivity.this,jadwalDokter.class);
+                Intent jdwlDokter = new Intent(HomeDokterActivity.this,jadwalDokter.class);
                 startActivity(jdwlDokter);
             }
         });
@@ -31,7 +31,7 @@ public class dokterActivity extends AppCompatActivity {
         btnLibur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent liburDokter = new Intent(dokterActivity.this,jadwalLiburDokter.class);
+                Intent liburDokter = new Intent(HomeDokterActivity.this,jadwalLiburDokter.class);
                 startActivity(liburDokter);
             }
         });
@@ -39,7 +39,7 @@ public class dokterActivity extends AppCompatActivity {
         btnBatal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent batalJadwal = new Intent(dokterActivity.this,pembatalan.class
+                Intent batalJadwal = new Intent(HomeDokterActivity.this,pembatalan.class
                 );
                 startActivity(batalJadwal);
             }
@@ -48,7 +48,7 @@ public class dokterActivity extends AppCompatActivity {
         btnOffline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Offline = new Intent(dokterActivity.this,jadwalOffline.class);
+                Intent Offline = new Intent(HomeDokterActivity.this,jadwalOffline.class);
                 startActivity(Offline);
             }
         });
@@ -56,7 +56,7 @@ public class dokterActivity extends AppCompatActivity {
         btnLive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent Live = new Intent(dokterActivity.this,jadwalLive.class);
+                Intent Live = new Intent(HomeDokterActivity.this,jadwalLive.class);
                 startActivity(Live);
             }
         });
