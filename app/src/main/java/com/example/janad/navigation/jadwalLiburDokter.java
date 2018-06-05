@@ -27,34 +27,57 @@ public class jadwalLiburDokter extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        // Menginisiasi  NavigationView
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        //Mengatur Navigasi View Item yang akan dipanggil untuk menangani item klik menu navigasi
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-
+            // This method will trigger on item Click of navigation menu
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
+                //Memeriksa apakah item tersebut dalam keadaan dicek  atau tidak,
                 if(menuItem.isChecked()) menuItem.setChecked(false);
                 else menuItem.setChecked(true);
+                //Menutup  drawer item klik
                 drawerLayout.closeDrawers();
+                //Memeriksa untuk melihat item yang akan dilklik dan melalukan aksi
                 switch (menuItem.getItemId()){
-                    case R.id.navhome4:
-                        Intent intent1 = new Intent(jadwalLiburDokter.this, ListDokterActivity.class);
+                    // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
+                    //dengan intent activity
+                    case R.id.navigation1:
+                        Intent intent1 = new Intent(jadwalLiburDokter.this, HomeDokterActivity.class);
                         startActivity(intent1);
                         return true;
-                    case R.id.navlihatjadwal4:
-                        Intent intent2 = new Intent(jadwalLiburDokter.this,lihatJadwalDokter.class);
+                    case R.id.navigation2:
+                        Intent intent2 = new Intent(jadwalLiburDokter.this, jadwalDokter.class);
                         startActivity(intent2);
                         return true;
-                    case R.id.navjadwalLibur4 :
-                        Intent intent3 = new Intent(jadwalLiburDokter.this,lihatJadwalLibur.class);
+                    case R.id.navigation7:
+                        Intent intent3 = new Intent(jadwalLiburDokter.this, jadwalLiburDokter.class);
                         startActivity(intent3);
                         return true;
-                    case R.id.navabout4:
-                        Intent intent4 = new Intent(jadwalLiburDokter.this,ListDokterActivity.class);
+                    case R.id.navigation9:
+                        Intent intent4 = new Intent(jadwalLiburDokter.this, pembatalan.class);
                         startActivity(intent4);
                         return true;
-                    case R.id.navsignout4:
-                        Intent intent5 = new Intent(jadwalLiburDokter.this,LoginActivity.class);
+                    case R.id.navigation3:
+                        Intent intent5 = new Intent(jadwalLiburDokter.this, jadwalLive.class);
                         startActivity(intent5);
+                        return true;
+                    case R.id.navigation8:
+                        Intent intent6 = new Intent(jadwalLiburDokter.this, jadwalOffline.class);
+                        startActivity(intent6);
+                        return true;
+                    case R.id.navigation4:
+                        Intent intent7 = new Intent(jadwalLiburDokter.this, HomeDokterActivity.class);
+                        startActivity(intent7);
+                        return true;
+                    case R.id.navigation5:
+                        Intent intent8 = new Intent(jadwalLiburDokter.this, HomeDokterActivity.class);
+                        startActivity(intent8);
+                        return true;
+                    case R.id.navigation6:
+                        Intent intent9 = new Intent(jadwalLiburDokter.this, LoginActivity.class);
+                        startActivity(intent9);
                         return true;
                     default:
                         Toast.makeText(getApplicationContext(),"Kesalahan Terjadi ",Toast.LENGTH_SHORT).show();
@@ -62,6 +85,7 @@ public class jadwalLiburDokter extends AppCompatActivity {
                 }
             }
         });
+        // Menginisasi Drawer Layout dan ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
             @Override
@@ -91,7 +115,6 @@ public class jadwalLiburDokter extends AppCompatActivity {
         });
 
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -118,6 +141,6 @@ public class jadwalLiburDokter extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-
     }
+
 }
