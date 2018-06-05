@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Dark">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".HomeDokterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".SignupActivity"
@@ -35,7 +35,7 @@
             android:name=".ListDokterActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
-            android:name=".HomeDokterActivity"
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".jadwalDokter"
