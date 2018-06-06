@@ -63,7 +63,8 @@
         <activity
             android:name=".HomePasienActivity"
             android:theme="@style/AppTheme.Dark" />
-        <activity android:name=".viewJadwalDokter"></activity>
+        <activity android:name=".viewJadwalDokter" />
+        <activity android:name=".daftarBooking"></activity>
     </application>
 
 </manifest>
