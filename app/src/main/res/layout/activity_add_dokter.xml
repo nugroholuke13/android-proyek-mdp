@@ -42,9 +42,15 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:hint="Name" />
+
             </android.support.design.widget.TextInputLayout>
 
             <!-- Username Label -->
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,11 +85,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
-                <EditText android:id="@+id/input_kota"
+
+                <EditText
+                    android:id="@+id/input_kota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textAutoComplete"
-                    android:hint="Kota" />
+                    android:hint="Kota"
+                    android:inputType="textAutoComplete" />
+
             </android.support.design.widget.TextInputLayout>
 
 
@@ -111,18 +120,6 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:hint="Second Mobile Number" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
-                <EditText android:id="@+id/input_spesialis"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textAutoComplete"
-                    android:hint="Spesialisasi" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
