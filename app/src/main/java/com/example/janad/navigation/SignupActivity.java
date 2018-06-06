@@ -140,8 +140,6 @@ public class SignupActivity extends AppCompatActivity {
         };
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(stringRequest);
-
-
     }
 
     private class RegisterTask extends AsyncTask<String, Void, String> {
