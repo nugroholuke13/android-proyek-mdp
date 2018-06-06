@@ -23,7 +23,7 @@ import java.util.Map;
 public class AddSpesialisActivity extends AppCompatActivity {
 
     Button btn;
-    TextView txtnama;
+    TextView txtnama, txtResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class AddSpesialisActivity extends AppCompatActivity {
 
         btn = findViewById(R.id.btn_spesial);
         txtnama = findViewById(R.id.input_name);
+        txtResult = findViewById(R.id.textView5);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,18 +44,18 @@ public class AddSpesialisActivity extends AppCompatActivity {
 
     public void tambahDokter() {
         String url = "http://mdpjjlg.000webhostapp.com/add_spesialis.php";
-        //txtResult.setText("Loading . . .");
+        txtResult.setText("Loading . . .");
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                //txtResult.setText(response + "\n");
+                txtResult.setText(response + "\n");
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     int code_res = jsonObject.getInt("code");
                     String message_res = jsonObject.getString("message");
 
-                    //txtResult.append(code_res + " - " + message_res);
+                    txtResult.append(code_res + " - " + message_res);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
