@@ -1,6 +1,7 @@
 package com.example.janad.navigation;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -14,17 +15,40 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
 public class jadwalLiburDokter extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     Button btnSubmitLibur;
-    TextView txtLibur;
+    TextView txtLibur,txtload;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwal_libur_dokter);
-
+        txtload = findViewById(R.id.textView8);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Menginisiasi  NavigationView
@@ -115,6 +139,44 @@ public class jadwalLiburDokter extends AppCompatActivity {
         });
 
     }
+
+    public void liburDokter(){
+        //String url = "http://10.10.75.249:8012/serviceapp/register.php";
+        String url = "http://mdpjjlg.000webhostapp.com/liburdokter_json.php";
+        txtload.setText("Loading . . .");
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                txtload.setText(response + "\n");
+
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    int code_res = jsonObject.getInt("code");
+                    String message_res = jsonObject.getString("message");
+
+                    txtload.append(code_res + " - " + message_res);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                txtload.setText(error.toString());
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("harilibur",txtLibur.getText().toString());
+                return params;
+            }
+        };
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(stringRequest);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

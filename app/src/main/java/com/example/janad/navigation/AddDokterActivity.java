@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,8 @@ public class AddDokterActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     Button btnsub;
-    TextView txtNama,txtUsername,txtAlamat,txtKota,txttelp1,txttelp2,txtspesial,txtnoijin;
+    TextView txtNama,txtUsername,txtAlamat,txtKota,txttelp1,txttelp2,txtnoijin;
+    Spinner txtspesial;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,7 +114,7 @@ public class AddDokterActivity extends AppCompatActivity {
         txtKota = findViewById(R.id.input_kota);
         txttelp1 = findViewById(R.id.input_mobile);
         txttelp2 = findViewById(R.id.input_mobile2);
-        txtspesial = findViewById(R.id.input_spesialis);
+        txtspesial = findViewById(R.id.spinner3);
         txtnoijin = findViewById(R.id.input_nomer_siup);
 
         btnsub.setOnClickListener(new View.OnClickListener() {
