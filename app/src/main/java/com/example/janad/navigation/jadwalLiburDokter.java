@@ -134,7 +134,7 @@ public class jadwalLiburDokter extends AppCompatActivity {
         btnSubmitLibur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                liburDokter();
             }
         });
 
