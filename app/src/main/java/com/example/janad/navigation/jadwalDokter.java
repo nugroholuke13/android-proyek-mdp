@@ -14,26 +14,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class jadwalDokter extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     Button btnSubmit;
-    TextView txtjadwal,txtjam,txtJamtutup,txtload,txtAntri;
+    TextView txtjadwal,txtjam;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,57 +107,14 @@ public class jadwalDokter extends AppCompatActivity {
         btnSubmit = findViewById(R.id.buttonJadwal);
         txtjadwal = findViewById(R.id.jadwalHari);
         txtjam = findViewById(R.id.txtJam);
-        txtJamtutup = findViewById(R.id.txtJamTutup);
-        txtload = findViewById(R.id.textView10);
-        txtAntri = findViewById(R.id.txtAntri);
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jadwalDokter();
+
             }
         });
     }
-
-    public void jadwalDokter(){
-        //String url = "http://10.10.75.249:8012/serviceapp/register.php";
-        String url = "http://mdpjjlg.000webhostapp.com/jadwaldokter_json.php";
-        txtload.setText("Loading . . .");
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                txtload.setText(response + "\n");
-
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    int code_res = jsonObject.getInt("code");
-                    String message_res = jsonObject.getString("message");
-
-                    txtload.append(code_res + " - " + message_res);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                txtload.setText(error.toString());
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("hari",txtjadwal.getText().toString());
-                params.put("jambuka",txtjam.getText().toString());
-                params.put("jamtutup",txtJamtutup.getText().toString());
-                params.put("jumAntri",txtAntri.getText().toString());
-                return params;
-            }
-        };
-        RequestQueue queue = Volley.newRequestQueue(this);
-        queue.add(stringRequest);
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
