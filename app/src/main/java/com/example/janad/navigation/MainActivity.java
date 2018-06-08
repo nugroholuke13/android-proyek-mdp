@@ -2,6 +2,7 @@ package com.example.janad.navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -10,16 +11,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     //Mendefinisikan variabel
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
+    ListView lvdokter_admin = findViewById(R.id.lvdokter_admin);
+    List<dokter>
+    Adapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
       // Intent intent = new Intent(this, ListDokterActivity.class);
       //startActivity(intent);

@@ -24,6 +24,11 @@
             android:text="Ini adalah Halaman Awal Admin"
             android:id="@+id/textView" android:layout_gravity="center_horizontal"/>
 
+        <ListView
+            android:id="@+id/lvdokter_admin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </LinearLayout>
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
