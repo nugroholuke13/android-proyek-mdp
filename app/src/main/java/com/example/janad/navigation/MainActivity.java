@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     ListView lvdokter_admin = findViewById(R.id.lvdokter_admin);
-    List<dokter>
+    //List<dokter>
     Adapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
